@@ -1,0 +1,39 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: routelister-operator
+  namespace: operator-test
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'routelister-operator:latest'
+  resources: {}
+  successfulBuildsHistoryLimit: 5
+  failedBuildsHistoryLimit: 5
+  strategy:
+    type: Docker
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: 'ose-ansible-operator:v4.9'
+  postCommit: {}
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/tomwis97/operator-tests'
+      ref: master
+    contextDir: route-list
+  triggers:
+    - type: ConfigChange
+    - type: ImageChange
+      imageChange: {}
+    - type: GitHub
+      github:
+        secret: Ro7bOjlvmnS02ysqdIzg
+    - type: Generic
+      generic:
+        secret: nbXF0H62bZERzA8Isryz
+  runPolicy: Serial
+

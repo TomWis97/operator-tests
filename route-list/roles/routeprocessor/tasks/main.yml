@@ -1,0 +1,9 @@
+---
+# tasks file for RouteProcessor
+- name: Route has been created
+  debug:
+    msg: "A Route object has been created and this playbook is doing stuff."
+
+- debug:
+    var: ansible_operator_meta
+

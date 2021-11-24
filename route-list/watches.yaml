@@ -4,4 +4,8 @@
   group: lister.rt.tomwishaupt.nl
   kind: RouteLister
   role: routelister
+- version: v1
+  group: route.openshift.io
+  kind: Route
+  role: routeprocessor
 #+kubebuilder:scaffold:watch
