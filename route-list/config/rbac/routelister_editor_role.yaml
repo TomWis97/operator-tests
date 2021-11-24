@@ -1,0 +1,24 @@
+# permissions for end users to edit routelisters.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: routelister-editor-role
+rules:
+- apiGroups:
+  - lister.rt.tomwishaupt.nl
+  resources:
+  - routelisters
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - lister.rt.tomwishaupt.nl
+  resources:
+  - routelisters/status
+  verbs:
+  - get

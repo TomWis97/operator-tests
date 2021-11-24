@@ -1,0 +1,6 @@
+apiVersion: lister.rt.tomwishaupt.nl/v1
+kind: RouteLister
+metadata:
+  name: routelister-sample
+spec:
+  example_var: 'foobar'

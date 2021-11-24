@@ -1,0 +1,12 @@
+---
+# tasks file for RouteLister
+- name: RouteLister object has been created
+  debug:
+    msg: "A RouteLister object has been created and this playbook is doing stuff."
+
+- debug:
+    msg: "Example variable: {{ example_var }}"
+
+- debug:
+    var: ansible_operator_meta
+

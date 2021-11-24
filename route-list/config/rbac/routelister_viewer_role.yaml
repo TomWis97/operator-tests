@@ -1,0 +1,20 @@
+# permissions for end users to view routelisters.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: routelister-viewer-role
+rules:
+- apiGroups:
+  - lister.rt.tomwishaupt.nl
+  resources:
+  - routelisters
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - lister.rt.tomwishaupt.nl
+  resources:
+  - routelisters/status
+  verbs:
+  - get
